@@ -1,0 +1,181 @@
+:root {
+    --primary-color : #f57c7c;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    background: url(./asets/img/bg-img.jpg) no-repeat center;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-card {
+    width: 300px;
+    background-color: #232e3a;
+    overflow: hidden;
+    text-align: center;
+    padding: 60px 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 4px #7a1515;
+    
+}
+.card-img {
+    padding: 4px;
+    background: linear-gradient(130deg, #f57c7c, #7965da);  
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+
+}
+.card-img img {
+    object-fit: cover;
+    width: 100px;
+    border-radius: 50%;
+    height: 100px;
+    display: block;
+    transition: 0.7s linear;
+    cursor: pointer;
+}
+img:hover {
+    transform: scale(2) translateY(14px);
+    /* transform: translateY(10px); */
+}
+.card-name {
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    margin-top: 16px;
+}
+.card-title {
+    font-size: 16px;
+    color: var(--primary-color);
+    margin-top: 12px;
+}
+.card-icon a i {
+    font-size: 20px;
+    margin: 0 4px;
+    margin-top: 12px;
+    color: white;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.bx:hover {
+    color: var(--primary-color);
+    font-size: 24px;
+}
+.card-btn {
+    width: 200px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s linear;
+}
+.card-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    /* transition: 0.3s linear; */
+    /* animation: animation-color 0.3s linear; */
+}
+@keyframes animation-color {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100;
+    }
+}
+
+.contact-card {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+.contact-body {
+    width: 500px;
+    height: 300px;
+    border-radius: 8px;
+    padding: 20px 50px;
+    background-color: #2C3A4A;
+    text-align: center;
+    animation: fadeOut 0.3s linear;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    display: none;
+}
+.contact-body h2 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 28px;
+    color: var(--primary-color);
+}
+input {
+    display: block;
+    width: 90%;
+    height: 38px;
+    padding-left: 20px;
+    margin-top: 20px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #7381cc;
+    color: white;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+input:focus {
+    border-bottom: 2px solid var(--primary-color);
+}
+.contact-body button {
+    width: 50%;
+    height: 42px;
+    margin-top: 36px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    transition: 0.15s linear;
+    border: none;
+    outline: none;
+}
+.contact-body button:hover {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+}
+@keyframes fadeOut {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+.show {
+    display: block;
+}
+.Required {
+    display: block;
+    margin-top: 8px;
+    color: red;
+}

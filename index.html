@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body>
+    <div class="profile-card">
+        <div class="card-header">
+            <div class="card-img">
+                <img src="./asets/img/avatar.JPG" alt="">
+            </div>
+            <h1 class="card-name">Nguyễn Phước Thắng</h1>
+            <p class="card-title">.Net Developer</p>
+            <div class="card-icon">
+                <a href="https://www.facebook.com/profile.php?id=100011193365493"><i class='bx bxl-facebook' ></i></a>
+                <a href="https://www.instagram.com/thang.nguyenphuoc/"><i class='bx bxl-instagram-alt' ></i></a>
+                <a href=""><i class='bx bxl-github' ></i></a>
+                <a href="https://www.youtube.com/channel/UCnsprm3PTJFjyvMtnFwif_Q"><i class='bx bxl-youtube' ></i></a>
+                
+            </div>
+            <button onclick="Contact()" class="card-btn">Contact me</div>
+        </div>
+        <div class="card-footer">
+        </div>
+    </div>
+    <div class="contact-card" onclick="unShow()">
+        
+    </div>
+    <div class="contact-body">
+        <h2>Contact me</h2>
+        <input class="contact-name" type="text" placeholder="Your name">
+        <span class="Required"></span>
+        <input class="contact-content" type="text" placeholder="Content" multiple="multiple">
+        <button onclick="Send()">Send</button>
+    </div>
+    <script>
+        var getContact = document.querySelector('.contact-card');
+        var getContactBody = document.querySelector('.contact-body');
+        function Contact() {
+            getContact.classList.add('show')
+            getContactBody.classList.add('show');
+        }
+        function unShow() {
+            getContact.classList.remove('show');
+            getContactBody.classList.remove('show');
+            getUser.value = "";
+            document.querySelector('.contact-content').value = "";
+        }
+        var getUser = document.querySelector('.contact-name');
+        var getRequired = document.querySelector('.Required');
+        function Send() {
+            if(getUser.value == "") {
+                getRequired.innerText = "Vui lòng nhập tên";
+            } else {
+                alert('Your Message has been sent. Thanks' + getUser.value)
+                getContactBody.classList.remove('show');
+                getContact.classList.remove('show')
+                getUser.value = "";
+                document.querySelector('.contact-content').value = "";
+            }
+        }
+        getUser.onfocus = function() {
+            getRequired.innerText = "";
+        }
+    </script>
+</body>
+</html>
